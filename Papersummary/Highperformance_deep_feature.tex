@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+\usepackage{amsmath}
+\mode<presentation>
+{
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+	%\usetheme{Madrid}
+	%\usetheme{Malmoe}
+	%\usetheme{Marburg}
+	\usetheme{Montpellier}
+	%\usetheme{PaloAlto}
+	%\usetheme{Pittsburgh}
+	%\usetheme{Rochester}
+	%\usetheme{Singapore}
+	%\usetheme{Szeged}
+	%\usetheme{Warsaw}
+
+	% As well as themes, the Beamer class has a number of color themes
+	% for any slide theme. Uncomment each of these in turn to see how it
+	% changes the colors of your current slide theme.
+
+	%\usecolortheme{albatross}
+	%\usecolortheme{beaver}
+	%\usecolortheme{beetle}
+	%\usecolortheme{crane}
+	%\usecolortheme{dolphin}
+	%\usecolortheme{dove}
+	%\usecolortheme{fly}
+	%\usecolortheme{lily}
+	%\usecolortheme{orchid}
+	%\usecolortheme{rose}
+	%\usecolortheme{seagull}
+	%\usecolortheme{seahorse}
+	%\usecolortheme{whale}
+	%\usecolortheme{wolverine}
+
+	%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+	%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+	%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Medical Image Registration]{Scalable high performance Image Registration framework by unsupervised deep feature representation learning.}
+ % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{} % Your name
+\institute[IIIT Vadodara] % Your institution as it will appear on the bottom of every %slide, may be shorthand to save space
+{
+	\section{\vspace{-10ex}}
+	%\begin{flushleft}
+	\medskip
+	\textbf{Presented By -} \\ % Your institution for the title page
+	
+	\text{Vijay Deshpande (201761003)}
+	
+
+ % Your email address
+}
+ % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Table of contents} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+% Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+\section{1.Introduction} 
+\section{2.Classification}
+\section{3.Recent Trends}
+\section{4.Conclusion}
+\end{frame}
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Introduction}
+
+\begin{itemize} 
+\item Intensity based registration won't provide point to point correspondence. Handcrafted features are ad-hoc. Conventional method requires expert knowledge of the modality. PCA , ICA unable to preserve the highly non-linear relationships when projected to low- dimensional space. Deep learning is promising because 1. Unsupervised learning 2. Hierarchical deep architecture. 3. Completely data driven .  We are using convolutional stacked autoencoder and compare the results with state of the art registration methods. Evaluation is on 1.5 tesla MR brain images (ADNI and LONI) dataset. It also gives better results on 7.0 tesla MR brain Images. \\ 
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Method}
+\begin{itemize}
+\item Overall idea is to transform high dimensional input spasce to small set of coefficients.Training data size $X_{L*M}$
+\item \textbf{Naive Methods for intrinsic Feature representations} : $f : R^{L}\longrightarrow R^{K} $ where $K < L$. Limitation of using this approach is number of centroids grows as the input dimension grows. PCA is also one method here the steps are 1. Calculate the mean by $\hat{x} = \dfrac{1}{M}\Sigma_{m=1}^{M} x_{m}$ 2.Compute the eigenvectors E = $[e_{j}]_{j=1,..L}$ for covariance matrix $\dfrac{1}{M-1} \bar{X} \bar{X}^{T}$, where $\bar{X} = [x_{m} - \hat{x}]_{m=1,....,M}$ and E are sorted in descending order of eigenvalues and then determine the first Q largest eigen values.Each training data can be reconstructed as $x_{m} = \hat{x} + E_{q} b $ where $E_{q} $ contains the first q largest eigen vectors of E and $b= E_{q}^{T}(x - \hat{x}) $
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item In the testing stage given the new testing the data $x_{new},$ it's low dimensional feature representation is given by $b_{new} = E_{q}^{T}(x_{new} - \hat{x})$
+\item PCA is orthogonal linear transform and hence not applicable for highly Non- Gaussian Distribution. So we need some method to infer intrinsic feature representaion.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item \textbf{Learning Intrinsic feature representation by Unsupervised Deep learning}
+\item \textbf{Introduction to Autoencoder}
+\end{itemize}
+\end{frame}
+
+\end{document} 
