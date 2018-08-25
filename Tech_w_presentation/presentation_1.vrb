@@ -1,6 +1,0 @@
-\frametitle{Collision Resolution Techniques}
-\begin{block}{1.Chaining}
-	In this collision resolution technique the key is stored outside the hash table in the form of a linklist .\\
-	The hash function is =(Key) mod m(size of hash table)
-	\includegraphics[width=5cm,height=5cm]{newchain.jpg}
-\end{block}

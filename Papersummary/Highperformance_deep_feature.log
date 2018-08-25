@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730) (preloaded format=pdflatex 2018.5.22)  3 AUG 2018 20:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730) (preloaded format=pdflatex 2018.5.22)  12 AUG 2018 20:05
 entering extended mode
 **./Highperformance_deep_feature.tex
 (Highperformance_deep_feature.tex
@@ -892,11 +892,11 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `Highperformance_deep_feature.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 170.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
  (Highperformance_deep_feature.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
 Package rerunfilecheck Info: File `Highperformance_deep_feature.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 64356DACCBB7C25FC4A61F9CA5C080C8;237.
@@ -920,7 +920,7 @@ pe1/public/amsfonts/cm/cmssi8.pfb></usr/local/share/miktex-texmf/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/a
 msfonts/cm/cmsy8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts
 /symbols/msam10.pfb>
-Output written on Highperformance_deep_feature.pdf (6 pages, 145674 bytes).
+Output written on Highperformance_deep_feature.pdf (6 pages, 145768 bytes).
 PDF statistics:
  246 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
